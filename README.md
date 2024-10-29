@@ -11,7 +11,7 @@ Focus est une application de gestion de tâches collaborative qui permet aux uti
 - **Journalisation** : Enregistrement des requêtes et actions utilisateur pour une meilleure traçabilité.
 - **Responsivité** : Interface adaptative aux différents formats d’écran pour une utilisation mobile et bureau.
 - **Accessibilité** : Conformité aux standards d’accessibilité WCAG.
-  
+
 ---
 
 ## Prérequis
@@ -28,6 +28,8 @@ Pour utiliser ou contribuer à ce projet, assurez-vous de disposer des versions 
 
 1. **Clonez le dépôt :**
 
+   Clonez le projet en local, puis accédez au dossier principal.
+
    ```bash
    git clone https://github.com/mamealassane/Focus-App.git
    cd Focus-App
@@ -35,27 +37,48 @@ Pour utiliser ou contribuer à ce projet, assurez-vous de disposer des versions 
 
 2. **Installez les dépendances NPM :**
 
-   ```bash
-   npm install
-   ```
+   - Accédez au dossier **backend** et installez les dépendances nécessaires au serveur :
+
+     ```bash
+     cd backend
+     npm install
+     ```
+
+   - Revenez au dossier principal et accédez au dossier **frontend** pour installer les dépendances de l’interface utilisateur :
+
+     ```bash
+     cd ../frontend
+     npm install
+     ```
 
 3. **Configurez l'environnement :**
 
-   Copiez le fichier `.env.example` en `.env` dans les dossiers backend et frontend, puis définissez les paramètres nécessaires, notamment pour la connexion à la base de données PostgreSQL, les informations d'authentification, et les clés d’API pour l’authentification OAuth2 et JWT.
+   - Dans chaque dossier (backend et frontend), copiez le fichier `.env.example` et renommez-le `.env`.
+   - Configurez les paramètres requis dans le fichier `.env` du backend (connexion à la base de données PostgreSQL, informations d'authentification OAuth2/JWT, etc.) et les variables d'environnement nécessaires pour le frontend.
 
 4. **Effectuez les migrations de la base de données :**
 
-   Utilisez Prisma pour mettre en place les tables et relations définies lors de la modélisation :
+   Dans le dossier **backend**, utilisez Prisma pour appliquer les migrations et créer les tables et relations dans la base de données :
 
    ```bash
+   cd ../backend
    npx prisma migrate dev --name init
    ```
 
 5. **Lancez le serveur de développement :**
 
-   ```bash
-   npm run dev
-   ```
+   - **Backend** : Assurez-vous d'être dans le dossier backend, puis démarrez le serveur backend :
+
+     ```bash
+     npm run dev
+     ```
+
+   - **Frontend** : Ouvrez un autre terminal, accédez au dossier frontend, puis lancez le serveur de développement :
+
+     ```bash
+     cd ../frontend
+     npm run dev
+     ```
 
 L'application est maintenant accessible sur `http://localhost:3000`.
 
