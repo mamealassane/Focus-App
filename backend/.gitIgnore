@@ -11,3 +11,4 @@
 
 # Prisma
 /backend/prisma/.env
+/backend/prisma/migrations
